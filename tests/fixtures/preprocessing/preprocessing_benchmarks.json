@@ -1,0 +1,14 @@
+{
+  "gwl_spot_checks": {
+    "1980": 0.3141,
+    "2000": 0.7562,
+    "2020": 1.2387
+  },
+  "ibtracs_counts": {
+    "lmi_hurricanes": 316,
+    "lmi_storms": 610,
+    "north_atlantic_lfi_hurricanes": 128,
+    "north_atlantic_lfi_storms": 267,
+    "rows": 610
+  }
+}

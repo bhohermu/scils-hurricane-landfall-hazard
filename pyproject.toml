@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scils-tc"
+version = "0.1.0"
+description = "A simplified, climate-conditioned model for North Atlantic tropical cyclone landfall rates."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Benjamin Hohermuth"},
+  {name = "Juner Liu"}
+]
+keywords = ["tropical cyclone", "hurricane", "hazard", "climate", "landfall", "risk"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Atmospheric Science"
+]
+dependencies = [
+  "numpy<2",
+  "pandas",
+  "xarray",
+  "netCDF4",
+  "scipy",
+  "geopandas",
+  "shapely",
+  "matplotlib",
+  "cartopy",
+  "dask",
+  "bottleneck",
+  "h5py",
+  "tcpyPI"
+]
+
+[project.urls]
+Repository = "https://github.com/Benjamin-Hohermuth_schr/scils-hurricane-landfall-hazard"
+
+[project.scripts]
+scils-preprocess = "run_preprocessing:main"
+scils-detrend = "run_detrending:main"
+scils-simulate = "run_simulation:main"
+scils-resample = "run_resampling:main"
+scils-yelt-resample = "run_yelt_resampling:main"
+scils-batch-preprocess = "run_batch_preprocessing:main"
+scils-batch-detrend = "run_batch_detrending:main"
+scils-batch-simulate = "run_batch_simulations:main"
+scils-batch-resample = "run_batch_resampling:main"
+scils-validate = "validate_simulation:main"
+
+[tool.setuptools]
+py-modules = [
+  "config",
+  "batch_utils",
+  "run_preprocessing",
+  "run_detrending",
+  "run_simulation",
+  "run_resampling",
+  "run_yelt_resampling",
+  "run_batch_preprocessing",
+  "run_batch_detrending",
+  "run_batch_simulations",
+  "run_batch_resampling",
+  "validate_simulation"
+]
+
+[tool.setuptools.packages.find]
+include = ["scils_tc*"]
+
+[tool.setuptools.package-data]
+scils_tc = ["py.typed"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = [
+  "external-data",
+  "preprocessed",
+  "detrended",
+  "simulated",
+  "resampled",
+]
+
+[tool.ruff.lint]
+select = ["F821"]

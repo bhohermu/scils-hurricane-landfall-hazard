@@ -1,0 +1,112 @@
+{
+  "CGI_regression_vs_GWL.nc": {
+    "data_vars": [
+      "intercept",
+      "slope"
+    ],
+    "intercept_mean": 0.26356983926314903,
+    "non_null_cells": 70181,
+    "samples": [
+      {
+        "coords": {
+          "latitude": 65.0,
+          "longitude": -62.0
+        },
+        "intercept": 0.0,
+        "slope": 0.0
+      },
+      {
+        "coords": {
+          "latitude": 46.75,
+          "longitude": -47.75
+        },
+        "intercept": 6.286673970655782e-08,
+        "slope": 0.0
+      },
+      {
+        "coords": {
+          "latitude": 30.5,
+          "longitude": -36.75
+        },
+        "intercept": 0.3420526127079735,
+        "slope": -0.03451500077978833
+      },
+      {
+        "coords": {
+          "latitude": 15.25,
+          "longitude": -28.0
+        },
+        "intercept": 0.19679174177063458,
+        "slope": 0.1853399365495538
+      },
+      {
+        "coords": {
+          "latitude": 0.0,
+          "longitude": 9.0
+        },
+        "intercept": 0.4993577311075309,
+        "slope": -0.0930879327004498
+      }
+    ],
+    "sizes": {
+      "latitude": 261,
+      "longitude": 441
+    },
+    "slope_mean": 0.05642266433591805
+  },
+  "PI_regression_vs_GWL.nc": {
+    "data_vars": [
+      "intercept",
+      "slope"
+    ],
+    "intercept_mean": 52.5724855050925,
+    "non_null_cells": 70181,
+    "samples": [
+      {
+        "coords": {
+          "latitude": 65.0,
+          "longitude": -62.0
+        },
+        "intercept": 0.0,
+        "slope": 0.0
+      },
+      {
+        "coords": {
+          "latitude": 46.75,
+          "longitude": -47.75
+        },
+        "intercept": 0.1900920398061703,
+        "slope": 0.0
+      },
+      {
+        "coords": {
+          "latitude": 30.5,
+          "longitude": -36.75
+        },
+        "intercept": 68.31341126851547,
+        "slope": 3.1384826588906836
+      },
+      {
+        "coords": {
+          "latitude": 15.25,
+          "longitude": -28.0
+        },
+        "intercept": 72.13175216825428,
+        "slope": 6.242688332520828
+      },
+      {
+        "coords": {
+          "latitude": 0.0,
+          "longitude": 9.0
+        },
+        "intercept": 67.96593801260038,
+        "slope": 4.702871009385948
+      }
+    ],
+    "sizes": {
+      "latitude": 261,
+      "longitude": 441
+    },
+    "slope_mean": 2.7851678068805357
+  }
+}

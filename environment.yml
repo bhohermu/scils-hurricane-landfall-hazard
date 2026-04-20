@@ -1,0 +1,23 @@
+name: scils_tc
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - setuptools
+  - numpy<2
+  - pandas
+  - xarray
+  - netCDF4
+  - scipy
+  - geopandas
+  - shapely
+  - matplotlib
+  - cartopy
+  - dask
+  - bottleneck
+  - h5py
+  - ruff
+  - pip
+  - pip:
+    - tcpyPI

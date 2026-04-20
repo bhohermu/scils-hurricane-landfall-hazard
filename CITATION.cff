@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite this repository and the associated
+  journal article. Zenodo and article metadata will be added to the release
+  that accompanies the published paper.
+title: scils-hurricane-landfall-hazard
+version: 0.1.0
+date-released: 2026-04-20
+license: Apache-2.0
+repository-code: https://github.com/Benjamin-Hohermuth_schr/scils-hurricane-landfall-hazard
+authors:
+  - family-names: Hohermuth
+    given-names: Benjamin
+    orcid: https://orcid.org/0000-0001-8218-0444
+    affiliation: Schroders Capital, Zurich
+  - family-names: Liu
+    given-names: Juner
+    orcid: https://orcid.org/0009-0005-1809-9445
+    affiliation: ETH Zurich

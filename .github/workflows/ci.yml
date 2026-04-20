@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: environment.yml
+          cache-environment: true
+          init-shell: bash
+      - name: Install package
+        shell: bash -l {0}
+        run: python -m pip install -e . --no-deps
+      - name: Run Ruff
+        shell: bash -l {0}
+        run: ruff check .
+      - name: Run public smoke tests
+        shell: bash -l {0}
+        run: python -m unittest tests.test_public_repo -v

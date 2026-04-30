@@ -38,7 +38,7 @@ def plot_lmi_pi_lfi_lmi(output_path=None, region='CONUS'):
         output_path = config.get_output_path(f"LMI_PI_LFI_LMI_plot_{region}.png")
     
     # Load LMI/PI single histogram
-    lmi_pi_single_file = config.get_output_path(config.LMI_PI_RATIO_FILE.replace('.csv', '_single.csv'))
+    lmi_pi_single_file = config.get_output_path(config.LMI_PI_RATIO_FILE)
     beta_params_file = config.get_output_path(f"LFI_LMI_{region}_beta_params.csv")
     
     if not Path(lmi_pi_single_file).exists() or not Path(beta_params_file).exists():

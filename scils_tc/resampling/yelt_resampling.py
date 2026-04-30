@@ -1,8 +1,17 @@
 """
 YELT (Year Event Loss Table) resampling functions.
 
-This module provides functions for adjusting a YELT based on climate change
-landfall rate change factors per SSHS category.
+This module adjusts a YELT based on per-category landfall rate change factors
+using the incremental simulation method described by Jewson (2023b) and
+applied in Section 2.3 of the manuscript.
+
+For categories with increased rates, events are duplicated into random years.
+For categories with decreased rates, events are removed with probability
+(1 - rate). Exposure, vulnerability, and per-event loss are held constant.
+
+Limitation: resampling cannot create events beyond those in the input YELT,
+effectively capping extreme losses and underestimating tail risk at high
+return periods (paper Sections 3.2 and 3.5).
 """
 
 import numpy as np

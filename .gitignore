@@ -93,3 +93,7 @@ data/IBTrACS.NA.v04r01.nc
 # OS files
 .DS_Store
 Thumbs.db
+
+# Manuscript and office files (do not publish to public repo)
+*.docx
+*.xlsx

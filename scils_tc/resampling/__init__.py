@@ -1,8 +1,24 @@
 """
 Resampling module for SCILS TC Model.
 
-This module provides functions for calculating landfall rate change factors
-between base and target periods for resampling catastrophe model outputs.
+This module implements the YELT adjustment workflow described in Section 2.3
+of the manuscript. It has two main components:
+
+1. **Landfall rate changes** (``resampling.py``): compares per-category
+   (Saffir-Simpson TS through Cat 5) landfall rates between a base
+   simulation (typically historical) and a target simulation (at a
+   specified GWL), producing rate-change factors.
+
+2. **YELT resampling** (``yelt_resampling.py``): applies the rate-change
+   factors to a Year Event Loss Table using incremental simulation
+   (Jewson, 2023b). Events in categories with increased rates are
+   duplicated; events in categories with decreased rates are thinned.
+   Exposure, vulnerability, and per-event loss are held constant.
+
+Important limitation: resampling modifies only event frequencies. It cannot
+introduce new events beyond the input YELT catalogue, which caps extreme
+losses and underestimates tail risk at high return periods (paper
+Sections 3.2 and 3.5).
 """
 
 from .plotting import (

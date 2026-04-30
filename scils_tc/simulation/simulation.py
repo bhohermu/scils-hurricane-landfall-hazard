@@ -1,13 +1,17 @@
 ﻿"""
 Core simulation functions for SCILS TC Model.
 
-This module implements the main simulation loop that generates
-synthetic tropical cyclone events for each year and iteration.
+This module implements the main simulation loop that generates synthetic
+tropical cyclone events for each year and iteration, following the four-step
+workflow described in Section 2.2 and Figure 2 of the manuscript.
 
-Uses:
-- LMI/PI: Single histogram distribution
-- LFI/LMI: 0-1 inflated Beta distribution per Jewson region
-- Rejection sampling with TS+ threshold (34 kts / 17.49 m/s)
+Key modelling choices:
+- LMI/PI ratio: sampled from a single pooled historical distribution
+  (paper Figure 1a), assumed stationary across climate states.
+- LFI/LMI ratio: sampled from region-specific zero-one-inflated Beta
+  distributions (paper Figure 1b, Jewson 2023a regions).
+- Rejection sampling ensures both PI and LMI meet the tropical-storm
+  threshold (>=34 kt / 17.49 m/s), consistent with the IBTrACS training data.
 """
 
 from pathlib import Path

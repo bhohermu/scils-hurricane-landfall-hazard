@@ -145,8 +145,8 @@ PI_FILE = "ERA5_PI.nc"
 CGI_MAP_FILE = "ERA5_CGI.nc"
 CGI_MDR_FILE = "CGI_MDR_annual.csv"
 
-# LMI/PI ratio histogram (single distribution)
-LMI_PI_RATIO_FILE = "LMI_PI_ratio_histogram.csv"
+# LMI/PI ratio histogram (single pooled distribution, paper Figure 1a)
+LMI_PI_RATIO_FILE = "LMI_PI_ratio_histogram_single.csv"
 
 # LFI/LMI Beta distribution parameters
 LFI_LMI_BETA_PARAMS_FILE = "LFI_LMI_NorthAtlantic_beta_params.csv"

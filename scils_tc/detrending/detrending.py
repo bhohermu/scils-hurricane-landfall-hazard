@@ -1,14 +1,17 @@
 """
 Detrending functions for SCILS TC Model.
 
-This module provides Theil-Sen regression-based detrending for PI and CGI maps,
-using GWL (Global Warming Level) as the predictor variable.
+This module implements the Theil-Sen regression-based detrending described
+in Section 2.1 of the manuscript ("Climate variables and detrending").
 
-The detrending process:
-1. Merge annual PI/CGI data with GWL data (from preprocessing)
-2. Fit Theil-Sen regression: variable ~ GWL for each grid cell
-3. Save regression coefficients (slope, intercept) - these are constant
-4. Apply detrending to extrapolate/interpolate to target GWL
+For each grid cell and month, the climate variable (PI or CGI) is regressed
+against GWL. The detrended value at target GWL t* is:
+
+    V_detrended(i, t*) = V_original(i) - V_predicted(i) + V_predicted(t*)
+
+This preserves interannual variability while shifting the climate mean
+to the target GWL. GWL is computed from ERA5 2m temperature following
+the C3S methodology (see preprocessing/gwl_calculation.py).
 """
 
 import numpy as np

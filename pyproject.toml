@@ -41,7 +41,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Benjamin-Hohermuth_schr/scils-hurricane-landfall-hazard"
+Repository = "https://github.com/bhohermu/scils-hurricane-landfall-hazard.git"
 
 [project.scripts]
 scils-preprocess = "run_preprocessing:main"

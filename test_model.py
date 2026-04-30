@@ -43,7 +43,7 @@ SIMULATION_INPUTS_PRESENT = all(
         config.PREPROCESSED_DIR / config.ENSO_STATE_FILE,
         config.PREPROCESSED_DIR / config.CGI_MDR_FILE,
         config.PREPROCESSED_DIR / config.ASO_MDR_SST_FILE,
-        config.PREPROCESSED_DIR / config.LMI_PI_RATIO_FILE.replace(".csv", "_single.csv"),
+        config.PREPROCESSED_DIR / config.LMI_PI_RATIO_FILE,
         config.PREPROCESSED_DIR / "LFI_LMI_NorthAtlantic_beta_params.csv",
     ]
 ) and DETRENDED_OUTPUTS_PRESENT

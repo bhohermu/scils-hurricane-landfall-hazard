@@ -293,13 +293,10 @@ def calculate_lmi_pi_ratio(ibtracs_df, pi_file=None, output_path=None, force_rec
     if output_path is None:
         output_path = config.get_output_path(config.LMI_PI_RATIO_FILE)
     
-    # The actual output file has _single suffix
-    output_path_single = str(output_path).replace('.csv', '_single.csv')
-    
     # Check if output already exists
-    if Path(output_path_single).exists() and not force_recalculate:
+    if Path(output_path).exists() and not force_recalculate:
         print("LMI/PI ratio file already exists. Use --force-recalculate to regenerate.")
-        return pd.read_csv(output_path_single)
+        return pd.read_csv(output_path)
     
     print("Calculating LMI/PI ratio distribution (single histogram)...")
     print("  Using month-specific PI at LMI location and time")
@@ -396,13 +393,12 @@ def calculate_lmi_pi_ratio(ibtracs_df, pi_file=None, output_path=None, force_rec
     bin_centers = (edges[:-1] + edges[1:]) / 2
     
     # Save histogram
-    output_path_single = str(output_path).replace('.csv', '_single.csv')
     hist_df = pd.DataFrame({
         'bin_center': bin_centers,
         'density': hist
     })
-    hist_df.to_csv(output_path_single, index=False)
-    print(f"  Saved to: {output_path_single}")
+    hist_df.to_csv(output_path, index=False)
+    print(f"  Saved to: {output_path}")
     
     # Print summary statistics
     print("\n  LMI/PI statistics (constrained <=1):")

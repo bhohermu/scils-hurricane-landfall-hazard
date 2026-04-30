@@ -98,10 +98,9 @@ def load_lmi_pi_ratio_distribution(ratio_file):
         Dictionary with 'bins', 'probs' keys.
     """
     # Load single histogram
-    ratio_file_single = str(ratio_file).replace('.csv', '_single.csv')
-    df_single = pd.read_csv(ratio_file_single)
-    bins = df_single['bin_center'].values
-    probs = df_single['density'].values
+    df = pd.read_csv(ratio_file)
+    bins = df['bin_center'].values
+    probs = df['density'].values
     probs = probs / probs.sum()
     
     return {

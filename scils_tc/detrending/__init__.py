@@ -1,8 +1,15 @@
 """
 Detrending module for SCILS TC Model.
 
-This module provides functions for detrending SST, PI, and CGI maps
-using Theil-Sen regression with GWL as the predictor.
+This module implements the climate-state adjustment described in Section 2.1
+of the manuscript ("Climate variables and detrending"). For each grid cell
+and month, PI and CGI are regressed against observed GWL using Theil-Sen
+regression. The fitted trend is then used to shift the data to a target GWL,
+preserving interannual variability while adjusting the climate mean.
+
+The detrended PI and CGI maps are the primary climate inputs to the
+simulation stage. SST detrending is retained for diagnostics but is not
+used in the TC classification pipeline.
 """
 
 from .detrending import (

@@ -22,7 +22,7 @@ class TestPublicRepositorySurface(unittest.TestCase):
         gwl_artifact = SimulationArtifact(
             region="NorthAtlantic",
             n_iter=3,
-            target_spec=TargetSpec.from_inputs(target_gwl=1.24),
+            target_spec=TargetSpec(effective_gwl=1.24, effective_year=2020.0, specified_by_year=False),
         )
         self.assertEqual(historical.simulation_filename(), "simulated_events_historical_NorthAtlantic_n3.csv")
         self.assertEqual(gwl_artifact.simulation_filename(), "simulated_events_GWL1.24_NorthAtlantic_n3.csv")

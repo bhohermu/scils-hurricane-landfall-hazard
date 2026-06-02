@@ -4,6 +4,7 @@ Companion code for:
 
 > Liu, J., Steinmann, C. B., Bresch, D. N., Meiler, S., Lohmann, U., and Hohermuth, B.:
 > *Recalibrating Risk: a simplified model for North Atlantic hurricanes in a warming climate.*
+> DOI: forth coming.
 > <!-- TODO: add journal reference and DOI after publication -->
 
 ## Overview

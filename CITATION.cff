@@ -4,8 +4,8 @@ message: >-
   journal article. Zenodo and article metadata will be added to the release
   that accompanies the published paper.
 title: scils-hurricane-landfall-hazard
-version: 0.1.0
-date-released: 2026-04-20
+version: 1.0.0
+date-released: 2026-06-02
 license: Apache-2.0
 repository-code: https://github.com/bhohermu/scils-hurricane-landfall-hazard.git
 authors:
